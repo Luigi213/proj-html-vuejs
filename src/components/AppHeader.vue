@@ -6,7 +6,7 @@ export default {
 }
 </script>
 <template lang="">
-    <header>
+    <header class="down-scroll">
         <div class="container">
             <div class="row d-flex align-items-center">
                 <div class="col-3">
