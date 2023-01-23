@@ -62,7 +62,7 @@ export default {
                 a{
                     transition: all 0.3s;
                     &:hover{
-                        background-color: orange;
+                        background-color: $fifth;
                         color: $first
                     }
                     color: $third;

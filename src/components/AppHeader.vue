@@ -16,7 +16,7 @@ export default {
                     <div>
                         <ul class="text-end mb-0">
                             <li class="list-unstyled d-inline-block" v-for="(nav, index) in navbar"> 
-                                <a class="fw-bolder text-decoration-none" href="#">{{nav}}</a>
+                                <a class="fw-semibold text-decoration-none" href="#">{{nav}}</a>
                             </li>
                         </ul>
                     </div>
@@ -34,12 +34,12 @@ export default {
         position: fixed;
         width: 100%;
         top: 0;
-        padding-top: 23px;
+        padding: 23px 0 0;
         ul{
             li{                
                 a{
                     &:hover{
-                        color: orange;
+                        color: $fifth;
                     }
                     transition: all 0.3s;
                     font-size: 18px;
@@ -54,7 +54,6 @@ export default {
                         border-radius: 100px;
                         background-color: $first;
                         color: $second;
-
                     }
                 }
             }
