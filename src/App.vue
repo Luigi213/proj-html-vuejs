@@ -5,12 +5,33 @@ export default {
   components:{
     AppHeader,
     AppFooter
+  },
+  data(){
+    return{
+      nav:[
+        'Home',
+        'About Us',
+        'Portfolio', 
+        'Our Process', 
+        'Pricing', 
+        'Blog', 
+        'Contact',
+        'Get a Quote'
+      ],
+      secondNav:[
+        'About Us',
+        'Portfolio', 
+        'Pricing', 
+        'Career', 
+        'Contact',
+      ]
+    }
   }
 }
 </script>
 <template lang="">
-  <AppHeader/>
-  <AppFooter/>
+  <AppHeader :navbar="nav"/>
+  <AppFooter :navbar="secondNav"/>
 </template>
 <style lang="scss">
   @use './styles/generals.scss';
