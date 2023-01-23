@@ -13,13 +13,31 @@ export default {
                             <h5 class="fw-semibold fs-4">Our Love For Animation</h5>
                             <h1 class="fw-semibold">We're Storytelling Experts With Creative Smarts</h1>
                             <p>Our culture inspires the creative and innovative spirit found throughout our Studio. We breathe life into new ideas!</p>                                
+                        </div>                                            
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-4">
+                            <div>
+                                <img src="" alt="">
+                                <h3>3D modeling</h3>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div>
+                                <h3>3D modeling</h3>                                
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div>                                
+                                <h3>3D modeling</h3>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="smart">
-            <img src="../assets/images/smarttwo.png" alt="smarttwo">
+            <img src="../assets/images/smart.png" alt="smarttwo">
         </div>
     </section>
 </template>
@@ -30,14 +48,12 @@ export default {
         padding-top: 130px ;
         position: relative;        
         .smart{            
-            width: 750px;
-            height: 1000px;
+            width: 500px;
+            height: 900px;
             position: absolute;
             top:0;
-            left: -15%;
+            left: 0;
             img{
-                border-radius: 100%;
-                object-fit: cover;
                 width: 100%;
                 height: 100%;
             }
