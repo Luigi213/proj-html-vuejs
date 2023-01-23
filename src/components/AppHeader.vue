@@ -29,8 +29,9 @@ export default {
 </template>
 <style lang="scss" scoped>
     @use '../styles/partials/variables' as *;
-    
+    @use '../styles/partials/mixins' as *;
     header{
+        z-index: 2;
         position: fixed;
         width: 100%;
         top: 0;
@@ -46,12 +47,11 @@ export default {
                     color: $first;
                 }
                 &:not(&:last-child){
-                    margin-right: 20px;
+                    margin-right: 23px;
                 }
                 &:last-child{
                     a{
-                        padding: 13px 38px;
-                        border-radius: 100px;
+                        @include btn;
                         background-color: $first;
                         color: $second;
                     }
