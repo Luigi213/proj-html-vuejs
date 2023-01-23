@@ -1,0 +1,103 @@
+<script>
+export default {
+    
+}
+</script>
+<template lang="">
+    <section>
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-12">
+                    <h5 class="fw-semibold">Our Works</h5>
+                    <h1 class="fw-semibold">Featured Productions</h1>
+                </div>
+                <div class="col-6">
+                    <p>Here's just a small sample of some of those projects that we're quite proud of. If you're looking for something specific feel free to get in contact with us.</p>
+                </div>
+            </div>
+            <div class="row gy-4 mt-3">
+                <div class="col-6">
+                    <img src="../assets/images/work1.png" alt="work1">
+                    <div class="overlay">
+                        <a class="d-flex justify-content-center align-items-center text-decoration-none" href="#"><i class="fa-solid fa-play fs-2"></i></a>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <img src="../assets/images/work2.png" alt="work2">
+                    <div class="overlay">
+                        <a class="d-flex justify-content-center align-items-center text-decoration-none" href="#"><i class="fa-solid fa-play fs-2"></i></a>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <img src="../assets/images/work3.png" alt="work3">      
+                    <div class="overlay">
+                        <a class="d-flex justify-content-center align-items-center text-decoration-none" href="#"><i class="fa-solid fa-play fs-2"></i></a>
+                    </div>            
+                </div>
+                <div class="col-6">
+                    <img src="../assets/images/work4.png" alt="work4">  
+                    <div class="overlay">
+                        <a class="d-flex justify-content-center align-items-center text-decoration-none" href="#"><i class="fa-solid fa-play fs-2"></i></a>
+                    </div>               
+                </div>
+            </div>
+        </div>
+    </section>
+</template>
+<style lang="scss" scoped>
+    @use '../styles/partials/variables' as *;
+    @use '../styles/partials/mixins' as *;
+    section{
+        margin-top: 130px ;
+        .container{
+            .row{
+                .col-12{
+                    h5{
+                        font-size: 25px;
+                        color: $third
+                    }
+                    h1{
+                        font-size: 62px;
+                    }
+                }
+                .col-6{
+                    transition: all 0.3s;
+                    position: relative;
+                    z-index: 0;
+                    &:hover{
+                        transform: skewX(5deg);
+                        .overlay{
+                            opacity: 1;
+                            visibility: visible;
+                            transform: scale(1);
+                        }
+                    }
+                    p{
+                        font-size: 18px;
+                    }
+                    .overlay{
+                        width: 96%;
+                        height: 100%;
+                        position:absolute;
+                        top: 0;
+                        z-index: 2;
+                        background: rgba(56, 53, 196, 0.25);
+                        border-radius: 20px;
+                        transform: scale(0);
+                        visibility: hidden;
+                        opacity: 0.8;
+                        transition: all 0.6s;
+                        a{
+                            height: 100%;
+                            i{
+                                @include btn-sp;
+                                background-color: $first;
+                                color: $fifth;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+</style>

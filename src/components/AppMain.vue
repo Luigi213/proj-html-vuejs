@@ -1,20 +1,23 @@
 <script>
-import Jumbo from './Jumbo.vue';
-import AppSectionSmart from './AppSectionSmart.vue'
-import AppStats from './AppStats.vue'
+import SectionJumbo from './SectionJumbo.vue';
+import SectionSmart from './SectionSmart.vue'
+import SectionStats from './SectionStats.vue'
+import SectionFeatures from './SectionFeatures.vue'
 export default {
     components:{
-        Jumbo,
-        AppSectionSmart,
-        AppStats
+        SectionJumbo,
+        SectionSmart,
+        SectionStats,
+        SectionFeatures,
     }
 }
 </script>
 <template lang="">
     <main>
-        <Jumbo/>
-        <AppSectionSmart/>
-        <AppStats/>
+        <SectionJumbo/>
+        <SectionSectionSmart/>
+        <SectionStats/>
+        <SectionFeatures/>
     </main>
 </template>
 <style lang="scss" scoped>    

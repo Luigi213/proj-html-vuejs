@@ -2,3 +2,8 @@
     padding: 13px 38px;
     border-radius: 100px;
 }
+
+@mixin btn-sp {
+    padding: 20px 25px;
+    border-radius: 100%;
+}

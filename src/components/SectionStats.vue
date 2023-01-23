@@ -88,7 +88,7 @@ export default {
             left:0;
         }
         .shape-bottom{
-            bottom:0;
+            bottom: -0.1%;
         }
         .globe{
             height: 95%;

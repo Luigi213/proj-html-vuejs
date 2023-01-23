@@ -115,8 +115,7 @@ export default {
                             position: absolute;
                             left: 50%;
                             top: 80%;
-                            padding: 20px 25px;
-                            border-radius: 100%;
+                            @include btn-sp;
                             background-color: #a616ea;
                             transform: translate(-50%,-50%);
                             z-index: 5;
