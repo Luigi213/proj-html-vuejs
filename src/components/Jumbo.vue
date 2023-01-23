@@ -23,6 +23,9 @@ export default {
                 <div class="col-12 mt-5 ">
                     <div class="image">
                         <img src="../assets/images/middle.png" alt="">
+                        <div class="play">
+                            <a href="#"><i class="fa-solid fa-play fs-2"></i></a> 
+                        </div>
                     </div>
                 </div>
             </div>
@@ -101,11 +104,27 @@ export default {
                         }
                     }
                     .image{
+                        position: relative;
                         img{
                             margin-top: -200px ;
                             transform: translateY(200px);
-                            z-index: 99;
+                            z-index: 3;
                             position: relative;
+                        }
+                        .play{
+                            position: absolute;
+                            left: 50%;
+                            top: 80%;
+                            padding: 20px 25px;
+                            border-radius: 100%;
+                            background-color: #a616ea;
+                            transform: translate(-50%,-50%);
+                            z-index: 5;
+                            a{
+                                i{
+                                    color: $first;
+                                }
+                            }
                         }
                     }
                 }
