@@ -15,7 +15,7 @@ export default {
                 <div class="col-9">
                     <div>
                         <ul class="text-end mb-0">
-                            <li class="list-unstyled d-inline-block me-4" v-for="(nav, index) in navbar"> 
+                            <li class="list-unstyled d-inline-block" v-for="(nav, index) in navbar"> 
                                 <a class="fw-bolder text-decoration-none" href="#">{{nav}}</a>
                             </li>
                         </ul>
@@ -36,10 +36,13 @@ export default {
         top: 0;
         padding-top: 23px;
         ul{
-            li{
+            li{                
                 a{
                     font-size: 18px;
                     color: $first;
+                }
+                &:not(&:last-child){
+                    margin-right: 20px;
                 }
                 &:last-child{
                     a{
