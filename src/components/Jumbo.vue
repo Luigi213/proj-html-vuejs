@@ -52,6 +52,9 @@ export default {
         <div class="globe3">
             <img src="../assets/images/globe3.png" alt="globe3">
         </div>
+        <div class="light">
+            <img src="../assets/images/light.png" alt="light">
+        </div>
         <div class="wave">
             <img src="../assets/images/bottom-shape.png" alt="wave">
         </div>
@@ -109,7 +112,6 @@ export default {
             }
         }
         .dots{
-            position: absolute;
             top: 0;
             .dots-left, .dots-right{
                 width: 50%;
@@ -119,7 +121,6 @@ export default {
             }
         }
         .mans{
-            position: absolute;
             z-index: 2;
             top: 27%;
             animation: fly 3s linear infinite;
@@ -135,9 +136,6 @@ export default {
                 }
             }
         }
-        .globe1, .globe2, .globe3{
-            position: absolute;
-        } 
         .globe1{
             top:11%;
             left: 9%;
@@ -165,15 +163,30 @@ export default {
             top: -20%;
             left: 33%;
         }
+        .light{
+            top:10%;
+            right: 9%;
+            animation: ligh 3s linear infinite;
+            @keyframes ligh {
+                50%{
+                    transform: rotate(10deg);
+                } 
+                100%{
+                    transform: rotate(0deg);
+                }
+            }
+        }
         .wave{
             width: 100%;
-            height: 160px;
-            position: absolute;
-            bottom:0;
+            height: 163px;
+            bottom: -1px;
             left: 0;
             img{
                 height: 100%;
             }
         }
+        .globe1, .globe2, .globe3, .light, .mans, .dots, .wave{
+            position: absolute;
+        } 
     }
 </style>
