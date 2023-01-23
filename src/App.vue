@@ -30,8 +30,10 @@ export default {
 }
 </script>
 <template lang="">
-  <AppHeader :navbar="nav"/>
-  <AppFooter :navbar="secondNav"/>
+  <div>
+    <AppHeader :navbar="nav"/>
+    <AppFooter :navbar="secondNav"/>
+  </div>
 </template>
 <style lang="scss">
   @use './styles/generals.scss';

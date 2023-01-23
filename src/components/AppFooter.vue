@@ -6,10 +6,10 @@ export default {
 }
 </script>
 <template lang="">
-  <div>
-    {{navbar}}
-  </div>
+    <div>
+    </div>
 </template>
 <style lang="scss" scoped> 
+    @use '../styles/partials/variables' as *;
   
 </style>
