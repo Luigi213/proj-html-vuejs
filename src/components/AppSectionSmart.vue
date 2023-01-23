@@ -44,13 +44,16 @@ export default {
         <div class="smart">
             <img src="../assets/images/smart.png" alt="smart">
         </div>
+        <div class="smart4">
+            <img src="../assets/images/smart4.png" alt="smart4">
+        </div>
     </section>
 </template>
 <style lang="scss" scoped> 
     @use '../styles/partials/variables' as *;
     @use '../styles/partials/mixins' as *;
     .Animetion{
-        padding-top: 130px ;
+        padding: 130px 0;
         position: relative;        
         .smart{            
             width: 500px;
@@ -58,6 +61,18 @@ export default {
             position: absolute;
             top:0;
             left: 0;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .smart4{
+            width: 145px;
+            height: 145px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            object-fit: cover;
             img{
                 width: 100%;
                 height: 100%;
