@@ -38,6 +38,10 @@ export default {
         ul{
             li{                
                 a{
+                    &:hover{
+                        color: orange;
+                    }
+                    transition: all 0.3s;
                     font-size: 18px;
                     color: $first;
                 }

@@ -60,6 +60,11 @@ export default {
             }
             .icons{
                 a{
+                    transition: all 0.3s;
+                    &:hover{
+                        background-color: orange;
+                        color: $first
+                    }
                     color: $third;
                     padding: 12px 15px;
                     border: 1px solid $sixth;
