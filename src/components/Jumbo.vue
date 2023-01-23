@@ -43,6 +43,15 @@ export default {
                 <img src="../assets/images/right-man.png" alt="man-right">
             </div>
         </div>
+        <div class="globe1">
+            <img src="../assets/images/globe1.png" alt="globe1">
+        </div>
+        <div class="globe2">
+            <img src="../assets/images/globe2.png" alt="globe2">
+        </div>
+        <div class="globe3">
+            <img src="../assets/images/globe3.png" alt="globe3">
+        </div>
         <div class="wave">
             <img src="../assets/images/bottom-shape.png" alt="wave">
         </div>
@@ -112,8 +121,49 @@ export default {
         .mans{
             position: absolute;
             z-index: 2;
-            top: 26%;
-
+            top: 27%;
+            animation: fly 3s linear infinite;
+            @keyframes fly {
+                0%{
+                    transform: translateY(0px);
+                }
+                50%{
+                    transform: translateY(-15px);
+                }
+                100%{
+                    transform: translateY(0px);
+                }
+            }
+        }
+        .globe1, .globe2, .globe3{
+            position: absolute;
+        } 
+        .globe1{
+            top:11%;
+            left: 9%;
+            width: 126px;
+            animation: glob1 4s linear infinite ;
+            @keyframes glob1 {
+                0%{
+                    transform: rotate(360deg);
+                }
+            }
+        }
+        .globe2{
+            width: 100px;
+            top: 17%;
+            right: 28%;
+            animation: glob2 4s linear infinite ;
+            @keyframes glob2 {
+                0%{
+                    transform: rotate(360deg);
+                }
+            }
+        }
+        .globe3{
+            width: 300px;
+            top: -20%;
+            left: 33%;
         }
         .wave{
             width: 100%;
@@ -122,7 +172,6 @@ export default {
             bottom:0;
             left: 0;
             img{
-                width: 100%;
                 height: 100%;
             }
         }
