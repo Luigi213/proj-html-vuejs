@@ -13,7 +13,7 @@ export default {
                     <p>Join our newsletter for tips on how to elevate your brand through storytelling</p>
                 </div>
             </div>
-            <div class="row justify-content-center">
+            <div class="row justify-content-center mt-5">
                 <div class="col-7">
                     <form action="#">
                         <input type="email" placeholder="Enter you email">
