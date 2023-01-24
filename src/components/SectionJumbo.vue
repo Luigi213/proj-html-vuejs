@@ -14,10 +14,10 @@ export default {
                 </div>
                 <div class="col-12 my-3">
                     <div class="btn">
-                        <button>Start Project</button>
+                        <a class="fw-semibold text-decoration-none" href="#"><span>Start Project</span></a>
                     </div>
                     <div class="btn">
-                        <button>Portfolio</button>
+                        <a class="fw-semibold text-decoration-none btn-sp" href="#"><span>Portfolio</span> </a>
                     </div>
                 </div>
                 <div class="col-12 mt-5 ">
@@ -89,20 +89,31 @@ export default {
                         font-size: 23px;
                     }
                     .btn{
-                        &:first-child{
-                            button{
-                                @include btn;
-                                background-color: $first;
-                            }
+                        position: relative;
+                        @include btn;
+                        margin: 15px ;
+                        span {
+                            color: black;
+                            position: relative;
+                            z-index: 6;
+                            transition: all 0.3s;
                         }
-                        &:last-child{
-                            button{
-                                @include btn;
-                                border: 1px solid $first;
-                                color: $first;
-                            }
+                        a::before {
+                            @include beforeButton;  
+                            background-color: rgb(255, 223, 237);
                         }
-                    }
+                        a::after {
+                            @include afterButton;
+                        }
+                        a:hover::before{
+                            opacity: 0;
+                            transform: scale(0.5, 0.5);
+                        }
+                        a:hover::after {
+                            opacity: 1;
+                            transform: scale(1, 1);
+                        }    
+                    }        
                     .image{
                         position: relative;
                         img{
@@ -120,8 +131,34 @@ export default {
                             transform: translate(-50%,-50%);
                             z-index: 5;
                             a{
+                                &:before {
+                                    position: absolute;
+                                    top: -58px;
+                                    right: -58px;
+                                    content: "";
+                                    z-index: 0;
+                                    width: 200px;
+                                    height: 200px;
+                                    display: block;
+                                    border-radius: 50%;
+                                    background: #a616ea;
+                                    animation: bavideo 1.1s linear infinite;
+                                    @keyframes bavideo {
+                                        0%{
+                                            transform: scale(0);
+                                            opacity: 1;
+                                        }
+                                        100%{
+                                            transform: scale(1);
+                                            opacity: 0;
+                                        }
+                                    }
+                                }
                                 i{
+                                    position: relative;
+                                    padding: 5px;
                                     color: $first;
+                                    z-index: 1;
                                 }
                             }
                         }

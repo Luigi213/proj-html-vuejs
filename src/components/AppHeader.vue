@@ -16,7 +16,7 @@ export default {
                     <div>
                         <ul class="text-end mb-0">
                             <li class="list-unstyled d-inline-block" v-for="(nav, index) in navbar"> 
-                                <a class="fw-semibold text-decoration-none" href="#">{{nav}}</a>
+                                <a class="fw-semibold text-decoration-none" href="#"><span>{{nav}}</span></a>
                             </li>
                         </ul>
                     </div>
@@ -37,7 +37,32 @@ export default {
         top: 0;
         padding: 23px 0 0;
         ul{
-            li{                
+            li{     
+                &:last-child{
+                    position: relative;
+                    @include btn;
+                    span {
+                        color: black;
+                        position: relative;
+                        z-index: 6;
+                        transition: all 0.3s;
+                    }
+                    a::before {
+                        @include beforeButton;  
+                        background-color: rgb(255, 223, 237);
+                    }
+                    a::after {
+                        @include afterButton;
+                    }
+                    a:hover::before{
+                        opacity: 0;
+                        transform: scale(0.5, 0.5);
+                    }
+                    a:hover::after {
+                        opacity: 1;
+                        transform: scale(1, 1);
+                    }
+                }   
                 a{
                     &:hover{
                         color: $fifth;
@@ -48,13 +73,6 @@ export default {
                 }
                 &:not(&:last-child){
                     margin-right: 23px;
-                }
-                &:last-child{
-                    a{
-                        @include btn;
-                        background-color: $first;
-                        color: $second;
-                    }
                 }
             }
         }

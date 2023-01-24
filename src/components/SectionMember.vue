@@ -111,6 +111,12 @@ export default {
                         width: 10px;
                         background-color: $eighth;
                         border-radius: 100% ;
+                        &:first-child{
+                            background-color: $fifth;
+                        }
+                        &:hover{
+                            background-color: #474646;
+                        }
                     }
                 }
                 .btn-sp{

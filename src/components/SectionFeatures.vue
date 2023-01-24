@@ -10,9 +10,7 @@ export default {
                 <div class="col-12">
                     <h5 class="fw-semibold">Our Works</h5>
                     <h1 class="fw-semibold">Featured Productions</h1>
-                </div>
-                <div class="col-6">
-                    <p>Here's just a small sample of some of those projects that we're quite proud of. If you're looking for something specific feel free to get in contact with us.</p>
+                    <p>Here's just a small sample of some of those projects that we're quite proud of. <br> If you're looking for something specific feel free to get in contact with us.</p>
                 </div>
             </div>
             <div class="row gy-4 mt-3">
@@ -42,7 +40,7 @@ export default {
                 </div>
                 <div class="col-12 text-center mt-5">
                     <div class="btn">
-                        <button class="fw-semibold">See Our Work</button>
+                        <a class="fw-semibold text-decoration-none" href="#"><span>See Our Work</span></a>
                     </div>
                 </div>
             </div>
@@ -69,6 +67,9 @@ export default {
                         border: 1px solid $fourth;
                     }
                 }
+                p{
+                    font-size: 18px;
+                }
                 .col-6{
                     transition: all 0.3s;
                     position: relative;
@@ -80,9 +81,6 @@ export default {
                             visibility: visible;
                             transform: scale(1);
                         }
-                    }
-                    p{
-                        font-size: 18px;
                     }
                     .overlay{
                         width: 96%;
@@ -106,6 +104,31 @@ export default {
                         }
                     }
                 }
+                .btn{
+                    position: relative;
+                    @include btn;
+                    margin: 15px ;
+                    span {
+                        color: black;
+                        position: relative;
+                        z-index: 6;
+                        transition: all 0.3s;
+                    }
+                    a::before {
+                        @include beforeButton;  
+                    }
+                    a::after {
+                        @include afterButton;
+                    }
+                    a:hover::before{
+                        opacity: 0;
+                        transform: scale(0.5, 0.5);
+                    }
+                    a:hover::after {
+                        opacity: 1;
+                        transform: scale(1, 1);
+                    }    
+                }        
             }
         }
     }
