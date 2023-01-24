@@ -85,6 +85,7 @@ export default {
     @use '../styles/partials/mixins' as *;
     section{
         position: relative;
+        overflow: hidden;
         .container{
             .m-sp{
                 margin-bottom: 180px;
@@ -158,14 +159,14 @@ export default {
             position: absolute;
             top:0;
             left: 0;
-            animation: shakeX 4s linear infinite;
+            animation: scaleX 4s linear infinite;
             animation-direction: alternate;
-            @keyframes shakeX {
+            @keyframes scaleX {
                 0%{
-                    transform: scale(0);
+                    transform: scale(1);
                 }
                 100%{
-                    transform: scale(1);
+                    transform: scale(0.9);
                 }
             }
         }
@@ -174,6 +175,7 @@ export default {
             top:0;
             right: 0;
             animation: shakeX 4s linear infinite;
+            max-width: 680px;
             animation-direction: alternate;
             @keyframes shakeX {
                 100%{
