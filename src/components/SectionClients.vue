@@ -1,6 +1,29 @@
 <script>
 export default {
-    
+    data(){
+        return{
+            sponsors:[
+                {
+                    img:'sponsor1.png',
+                },
+                {
+                    img:'sponsor2.png',
+                },
+                {
+                    img:'sponsor3.png',
+                },
+                {
+                    img:'sponsor4.png',
+                },
+                {
+                    img:'sponsor5.png',
+                },
+                {
+                    img:'sponsor6.png',
+                },
+            ]
+        }
+    }
 }
 </script>
 <template lang="">
@@ -14,23 +37,8 @@ export default {
                 </div>
             </div>
             <div class="row mt-5">
-                <div class="col-2">
-                    <img src="../assets/images/sponsor1.png" alt="sponsor1">
-                </div>
-                <div class="col-2">
-                    <img src="../assets/images/sponsor2.png" alt="sponsor2">
-                </div>
-                <div class="col-2">
-                    <img src="../assets/images/sponsor3.png" alt="sponsor3">
-                </div>
-                <div class="col-2">
-                    <img src="../assets/images/sponsor4.png" alt="sponsor4">
-                </div>
-                <div class="col-2">
-                    <img src="../assets/images/sponsor5.png" alt="sponsor5">
-                </div>
-                <div class="col-2">
-                    <img src="../assets/images/sponsor6.png" alt="sponsor6">
+                <div class="col-2" v-for="(sponsor, index) in sponsors" :key="index">
+                    <img :src="`src/assets/images/${sponsor.img}`" alt="sponsors">
                 </div>
             </div>
         </div>

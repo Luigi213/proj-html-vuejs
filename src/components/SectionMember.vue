@@ -87,6 +87,8 @@ export default {
         position: relative;
         overflow: hidden;
         .container{
+            position: relative;
+            z-index: 1;
             .m-sp{
                 margin-bottom: 180px;
             }
