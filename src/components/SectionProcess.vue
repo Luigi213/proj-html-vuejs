@@ -1,57 +1,108 @@
 <script>
 export default {
-    
+    data(){
+        return{
+            active: 0,
+            active2: 1,
+        }
+    },
 }
 </script>
 <template lang="">
     <section>
         <div class="container">
-            <div class="row pt-5">
+            <div class="row pt-5 overflow">
                 <div class="col-6 offset-6">
                     <div>
                         <h4 class="fw-semibold">Our Process</h4>
                         <h1 class="fw-semibold">Our Process for Your Animation Production</h1>
                         <p>We have an effective process for working on animation</p>
                     </div>
-                    <div class="row text-center">
-                        <div class="col-6">                            
-                            <div class='card-sp'>
-                                <div  class="icon mb-3">
-                                    <img src="../assets/images/process1.png" alt="process1">
-                                </div>
-                                <div>
-                                    <h2>Scripting</h2>
-                                    <p>
-                                        Well take your idea and create a
-                                        technical script which consists
-                                        of action notes and animation
-                                        descriptions
-                                    </p>
-                                </div>
-                                <div class="badge-sp d-flex align-items-end">
-                                    <span class="fw-semibold">1</span> 
-                                </div>
-                            </div>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-3 visibility">                            
+                    <div class='card-sp'>
+                        <div  class="icon mb-3">
+                            <img src="../assets/images/process1.png" alt="process1">
                         </div>
-                        <div class="col-6">                            
-                            <div class='card-sp'>
-                                <div class="icon2 mb-3">
-                                    <img src="../assets/images/process2.png" alt="process1">
-                                </div>
-                                <div>
-                                    <h2>Pre-Production</h2>
-                                    <p>
-                                        Well take your idea and create a
-                                        technical script which consists
-                                        of action notes and animation
-                                        descriptions
-                                    </p>
-                                </div>
-                                <div class="badge-sp d-flex align-items-end">
-                                    <span class="fw-semibold">2</span> 
-                                </div>
-                            </div>
+                        <div>
+                            <h2>Scripting</h2>
+                            <p>
+                                Well take your idea and create a
+                                technical script which consists
+                                of action notes and animation
+                                descriptions
+                            </p>
                         </div>
+                        <div class="badge-sp d-flex align-items-end">
+                            <span class="fw-semibold">1</span> 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 visibility">                            
+                    <div class='card-sp'>
+                        <div class="icon2 mb-3">
+                            <img src="../assets/images/process2.png" alt="process1">
+                        </div>
+                        <div>
+                            <h2>Pre-Production</h2>
+                            <p>
+                                Well take your idea and create a
+                                technical script which consists
+                                of action notes and animation
+                                descriptions
+                            </p>
+                        </div>
+                        <div class="badge-sp d-flex align-items-end">
+                            <span class="fw-semibold">2</span> 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">                            
+                    <div class='card-sp'>
+                        <div  class="icon mb-3">
+                            <img src="../assets/images/process1.png" alt="process1">
+                        </div>
+                        <div>
+                            <h2>Scripting</h2>
+                            <p>
+                                Well take your idea and create a
+                                technical script which consists
+                                of action notes and animation
+                                descriptions
+                            </p>
+                        </div>
+                        <div class="badge-sp d-flex align-items-end">
+                            <span class="fw-semibold">3</span> 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">                            
+                    <div class='card-sp'>
+                        <div class="icon2 mb-3">
+                            <img src="../assets/images/process2.png" alt="process1">
+                        </div>
+                        <div>
+                            <h2>Pre-Production</h2>
+                            <p>
+                                Well take your idea and create a
+                                technical script which consists
+                                of action notes and animation
+                                descriptions
+                            </p>
+                        </div>
+                        <div class="badge-sp d-flex align-items-end">
+                            <span class="fw-semibold">4</span> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 offset-6">
+                    <div class="btn">
+                        <button><i class="fa-solid fa-arrow-left"></i></button>
+                        <button><i class="fa-solid fa-arrow-right"></i></button>
                     </div>
                 </div>
             </div>
@@ -68,6 +119,9 @@ export default {
         margin-top: 130px;
         position: relative;
         .container{
+            .overflow{
+                overflow: hidden;
+            }
             .row{
                 h4{
                     color: $third;
@@ -77,6 +131,22 @@ export default {
                 }
                 p{
                     font-size: 18px;
+                }
+                .visibility{
+                    visibility: hidden;
+                }
+                .btn{
+                    button{
+                        transition: all 0.3s;
+                        &:hover{
+                            background-color: $fifth;
+                            color: $first
+                        }
+                        color: $third;
+                        border: 1px solid $sixth;
+                        @include btn-arrow;
+                        margin-right: 20px ;
+                    }
                 }
                 .card-sp{
                     position: relative;
