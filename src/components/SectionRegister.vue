@@ -17,7 +17,7 @@ export default {
                 <div class="col-7">
                     <form action="#">
                         <input type="email" placeholder="Enter you email">
-                        <button class="fw-semibold" type="sumbit">Sumbit</button>
+                        <button class="fw-semibold" type="sumbit"><span>Sumbit</span></button>
                     </form>
                 </div>
             </div>
@@ -67,7 +67,27 @@ export default {
                         right: 26px;
                         padding: 13px 38px;
                         border-radius: 100px;
-                        background-color: rgb(255, 223, 237);
+                        span {
+                            color: black;
+                            position: relative;
+                            z-index: 6;
+                            transition: all 0.3s;
+                        }
+                        &::before {
+                            @include beforeButton;  
+                            background-color: rgb(255, 223, 237);
+                        }
+                        &::after {
+                            @include afterButton;
+                        }
+                        &:hover::before{
+                            opacity: 0;
+                            transform: scale(0.5, 0.5);
+                        }
+                        &:hover::after {
+                            opacity: 1;
+                            transform: scale(1, 1);
+                        }                                
                     }
                 }
             }
