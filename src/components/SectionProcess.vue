@@ -105,22 +105,6 @@ export default {
                             </div>
                         </div>
                     </div>
-                        <!-- <div class="col-6 hidden" :class="(active + 1 === index) ? 'visibility' : ''" v-for="(process, index) in processArray" :key="index">
-                            <div class='card-sp'>
-                                <div  class="icon mb-3"> 
-                                    <img :src="`src/assets/images/${process.img}`" alt="process1">
-                                </div>
-                                <div>
-                                    <h2>{{process.title}}</h2>
-                                    <p>
-                                        {{process.pagraph}}
-                                    </p>
-                                </div>
-                                <div class="badge-sp d-flex align-items-end">
-                                    <span class="fw-semibold">{{process.id}}</span> 
-                                </div>
-                            </div>
-                        </div> -->
                 </div>
             </div>
             <div class="row mt-3">
@@ -164,9 +148,6 @@ export default {
                 .w-sp{
                     width: 100%;
                     overflow: hidden;
-                    .col{
-
-                    }
                 }
                 .hidden{
                     display: none;
