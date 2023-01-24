@@ -131,9 +131,7 @@ export default {
                 .card-sp-sm1, .card-sp-sm2, .card-sp-sm3{
                     position: relative;
                     z-index: 1;
-                    line-height: 30px;
-                    padding: 40px 11px 20px 11px;
-                    border-radius: 50px ;
+                    @include card;
                     transition: all 0.4s;
                     outline: 1px solid rgb(213, 213, 213);
                     p{

@@ -2,7 +2,7 @@
 export default {
     props:{
         navbar: Array
-    }
+    },
 }
 </script>
 <template lang="">

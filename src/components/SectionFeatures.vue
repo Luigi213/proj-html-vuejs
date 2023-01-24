@@ -40,6 +40,11 @@ export default {
                         <a class="d-flex justify-content-center align-items-center text-decoration-none" href="#"><i class="fa-solid fa-play fs-2"></i></a>
                     </div>               
                 </div>
+                <div class="col-12 text-center mt-5">
+                    <div class="btn">
+                        <button class="fw-semibold">See Our Work</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -58,6 +63,10 @@ export default {
                     }
                     h1{
                         font-size: 62px;
+                    }
+                    .btn{
+                        @include btn;
+                        border: 1px solid $fourth;
                     }
                 }
                 .col-6{
