@@ -32,7 +32,7 @@ export default {
     @use '../styles/partials/mixins' as *;
     header{
         z-index: 2;
-        position: fixed;
+        position: absolute;
         width: 100%;
         top: 0;
         padding: 23px 0 0;

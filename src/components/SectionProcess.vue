@@ -3,9 +3,57 @@ export default {
     data(){
         return{
             active: 0,
-            active2: 1,
+            autoplay: null,
+            processArray: [
+                {
+                    id: 1,
+                    img: 'process1.png',
+                    title: 'Scripting',
+                    pagraph: 'Well take your idea and create a technical script which consists of action notes and animation descriptions'
+                },
+                {
+                    id: 2,
+                    img: 'process2.png',
+                    title: 'Pre-Production',
+                    pagraph: 'Well take your idea and create a technical script which consists of action notes and animation descriptions'
+                },
+                {
+                    id: 3,
+                    img: 'process1.png',
+                    title: 'Scripting',
+                    pagraph: 'Well take your idea and create a technical script which consists of action notes and animation descriptions'
+                },
+                {
+                    id: 4,
+                    img: 'process2.png',
+                    title: 'Pre-Production',
+                    pagraph: 'Well take your idea and create a technical script which consists of action notes and animation descriptions'
+                },
+            ]
         }
     },
+    mounted(){
+        this.automatic()
+    },
+    methods:{
+        next(){
+            this.active++;
+            if(this.active > this.processArray.length - 2){
+                this.active = 0;
+            }
+        },      
+        prev(){
+            this.active--;
+            if(this.active < 0){
+                this.active = this.processArray.length - 2;
+            }
+        },
+        automatic(){
+            this.autoplay = setInterval(() => {
+                this.next()
+            }, 2000);
+        }
+    }
 }
 </script>
 <template lang="">
@@ -18,97 +66,56 @@ export default {
                         <h1 class="fw-semibold">Our Process for Your Animation Production</h1>
                         <p>We have an effective process for working on animation</p>
                     </div>
-                </div>
-            </div>
-            <div class="row text-center">
-                <div class="col-3 visibility">                            
-                    <div class='card-sp'>
-                        <div  class="icon mb-3">
-                            <img src="../assets/images/process1.png" alt="process1">
+                    <div class="row text-center">
+                        <div class="col-6 hidden" :class="(active === index) ? 'visibility' : ''" v-for="(process, index) in processArray" :key="index">
+                            <div class='card-sp'>
+                                <div  class="icon mb-3"> 
+                                    <img :src="`src/assets/images/${process.img}`" alt="process1">
+                                </div>
+                                <div>
+                                    <h2>{{process.title}}</h2>
+                                    <p>
+                                        {{process.pagraph}}
+                                    </p>
+                                </div>
+                                <div class="badge-sp d-flex align-items-end">
+                                    <span class="fw-semibold">{{process.id}}</span> 
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <h2>Scripting</h2>
-                            <p>
-                                Well take your idea and create a
-                                technical script which consists
-                                of action notes and animation
-                                descriptions
-                            </p>
-                        </div>
-                        <div class="badge-sp d-flex align-items-end">
-                            <span class="fw-semibold">1</span> 
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3 visibility">                            
-                    <div class='card-sp'>
-                        <div class="icon2 mb-3">
-                            <img src="../assets/images/process2.png" alt="process1">
-                        </div>
-                        <div>
-                            <h2>Pre-Production</h2>
-                            <p>
-                                Well take your idea and create a
-                                technical script which consists
-                                of action notes and animation
-                                descriptions
-                            </p>
-                        </div>
-                        <div class="badge-sp d-flex align-items-end">
-                            <span class="fw-semibold">2</span> 
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3">                            
-                    <div class='card-sp'>
-                        <div  class="icon mb-3">
-                            <img src="../assets/images/process1.png" alt="process1">
-                        </div>
-                        <div>
-                            <h2>Scripting</h2>
-                            <p>
-                                Well take your idea and create a
-                                technical script which consists
-                                of action notes and animation
-                                descriptions
-                            </p>
-                        </div>
-                        <div class="badge-sp d-flex align-items-end">
-                            <span class="fw-semibold">3</span> 
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3">                            
-                    <div class='card-sp'>
-                        <div class="icon2 mb-3">
-                            <img src="../assets/images/process2.png" alt="process1">
-                        </div>
-                        <div>
-                            <h2>Pre-Production</h2>
-                            <p>
-                                Well take your idea and create a
-                                technical script which consists
-                                of action notes and animation
-                                descriptions
-                            </p>
-                        </div>
-                        <div class="badge-sp d-flex align-items-end">
-                            <span class="fw-semibold">4</span> 
+                        <div class="col-6 hidden" :class="(active + 1 === index) ? 'visibility' : ''" v-for="(process, index) in processArray" :key="index">
+                            <div class='card-sp'>
+                                <div  class="icon mb-3"> 
+                                    <img :src="`src/assets/images/${process.img}`" alt="process1">
+                                </div>
+                                <div>
+                                    <h2>{{process.title}}</h2>
+                                    <p>
+                                        {{process.pagraph}}
+                                    </p>
+                                </div>
+                                <div class="badge-sp d-flex align-items-end">
+                                    <span class="fw-semibold">{{process.id}}</span> 
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row mt-3">
                 <div class="col-6 offset-6">
-                    <div class="btn">
-                        <button><i class="fa-solid fa-arrow-left"></i></button>
-                        <button><i class="fa-solid fa-arrow-right"></i></button>
+                    <div class="btn-sp">
+                        <button @click="prev"><i class="fa-solid fa-arrow-left"></i></button>
+                        <button @click="next"><i class="fa-solid fa-arrow-right"></i></button>
                     </div>
                 </div>
             </div>
         </div>
         <div class="image">
             <img src="../assets/images/process-thumb.png" alt="process-thumb">
+        </div>
+        <div class="smart4">
+            <img src="../assets/images/smart4.png" alt="smart4">
         </div>
     </section>
 </template>
@@ -117,6 +124,7 @@ export default {
     @use '../styles/partials/mixins' as *;
     section{
         margin-top: 130px;
+        padding-bottom: 185px ;
         position: relative;
         .container{
             .overflow{
@@ -132,10 +140,25 @@ export default {
                 p{
                     font-size: 18px;
                 }
-                .visibility{
-                    visibility: hidden;
+                .hidden{
+                    display: none;
                 }
-                .btn{
+                .visibility{
+                    transition: all 0.3s;
+                    animation: d-play 3s;
+                    @keyframes d-play {
+                        from{
+                            transform: translateX(-200px);
+                            opacity: 0;
+                        }
+                        to{
+                            transform: translateX(50px);
+                            opacity: 1;
+                        }
+                    }
+                    display: block;
+                }
+                .btn-sp{
                     button{
                         transition: all 0.3s;
                         &:hover{
@@ -145,7 +168,7 @@ export default {
                         color: $third;
                         border: 1px solid $sixth;
                         @include btn-arrow;
-                        margin-right: 20px ;
+                        margin-right: 15px ;
                     }
                 }
                 .card-sp{
@@ -185,6 +208,18 @@ export default {
                         }
                     }
                 }
+            }
+        }
+        .smart4{
+            width: 145px;
+            height: 145px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            object-fit: cover;
+            img{
+                width: 100%;
+                height: 100%;
             }
         }
         .image{
