@@ -2,9 +2,22 @@
 export default {
     data(){
         return{
+            width: -646,
             active: 0,
             autoplay: null,
             processArray: [
+                {
+                    id: 3,
+                    img: 'process1.png',
+                    title: 'Scripting',
+                    pagraph: 'Well take your idea and create a technical script which consists of action notes and animation descriptions',
+                },
+                {
+                    id: 4,
+                    img: 'process2.png',
+                    title: 'Pre-Production',
+                    pagraph: 'Well take your idea and create a technical script which consists of action notes and animation descriptions'
+                },
                 {
                     id: 1,
                     img: 'process1.png',
@@ -21,12 +34,18 @@ export default {
                     id: 3,
                     img: 'process1.png',
                     title: 'Scripting',
-                    pagraph: 'Well take your idea and create a technical script which consists of action notes and animation descriptions'
+                    pagraph: 'Well take your idea and create a technical script which consists of action notes and animation descriptions',
                 },
                 {
                     id: 4,
                     img: 'process2.png',
                     title: 'Pre-Production',
+                    pagraph: 'Well take your idea and create a technical script which consists of action notes and animation descriptions'
+                },
+                {
+                    id: 1,
+                    img: 'process1.png',
+                    title: 'Scripting',
                     pagraph: 'Well take your idea and create a technical script which consists of action notes and animation descriptions'
                 },
             ]
@@ -37,15 +56,15 @@ export default {
     },
     methods:{
         next(){
-            this.active++;
-            if(this.active > this.processArray.length - 2){
-                this.active = 0;
+            this.width += -313
+            if(this.width < -1615){
+                this.width = -646
             }
         },      
         prev(){
-            this.active--;
-            if(this.active < 0){
-                this.active = this.processArray.length - 2;
+            this.width += +313
+            if(this.width > -646){
+                this.width = -1615
             }
         },
         automatic(){
@@ -66,40 +85,42 @@ export default {
                         <h1 class="fw-semibold">Our Process for Your Animation Production</h1>
                         <p>We have an effective process for working on animation</p>
                     </div>
-                    <div class="row text-center">
-                        <div class="col-6 hidden" :class="(active === index) ? 'visibility' : ''" v-for="(process, index) in processArray" :key="index">
-                            <div class='card-sp'>
-                                <div  class="icon mb-3"> 
-                                    <img :src="`src/assets/images/${process.img}`" alt="process1">
-                                </div>
-                                <div>
-                                    <h2>{{process.title}}</h2>
-                                    <p>
-                                        {{process.pagraph}}
-                                    </p>
-                                </div>
-                                <div class="badge-sp d-flex align-items-end">
-                                    <span class="fw-semibold">{{process.id}}</span> 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 hidden" :class="(active + 1 === index) ? 'visibility' : ''" v-for="(process, index) in processArray" :key="index">
-                            <div class='card-sp'>
-                                <div  class="icon mb-3"> 
-                                    <img :src="`src/assets/images/${process.img}`" alt="process1">
-                                </div>
-                                <div>
-                                    <h2>{{process.title}}</h2>
-                                    <p>
-                                        {{process.pagraph}}
-                                    </p>
-                                </div>
-                                <div class="badge-sp d-flex align-items-end">
-                                    <span class="fw-semibold">{{process.id}}</span> 
+                    <div class="w-sp">
+                        <div class="d-flex text-center" :style="{transform:`translate3d(${width}px, 0px, 0px)`, transition: 'all 0.6s ease 0s', width: '2584px'}">
+                            <div :style="{width:'313px', margin: '0 10px 0 0'}" :class="(active === index) ? 'active' : ''" v-for="(process, index) in processArray" :key="index">
+                                <div class='card-sp'>
+                                    <div  class="icon mb-3"> 
+                                        <img :src="`src/assets/images/${process.img}`" alt="process1">
+                                    </div>
+                                    <div>
+                                        <h2>{{process.title}}</h2>
+                                        <p>
+                                            {{process.pagraph}}
+                                        </p>
+                                    </div>
+                                    <div class="badge-sp d-flex align-items-end">
+                                        <span class="fw-semibold">{{process.id}}</span> 
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                        <!-- <div class="col-6 hidden" :class="(active + 1 === index) ? 'visibility' : ''" v-for="(process, index) in processArray" :key="index">
+                            <div class='card-sp'>
+                                <div  class="icon mb-3"> 
+                                    <img :src="`src/assets/images/${process.img}`" alt="process1">
+                                </div>
+                                <div>
+                                    <h2>{{process.title}}</h2>
+                                    <p>
+                                        {{process.pagraph}}
+                                    </p>
+                                </div>
+                                <div class="badge-sp d-flex align-items-end">
+                                    <span class="fw-semibold">{{process.id}}</span> 
+                                </div>
+                            </div>
+                        </div> -->
                 </div>
             </div>
             <div class="row mt-3">
@@ -140,10 +161,17 @@ export default {
                 p{
                     font-size: 18px;
                 }
+                .w-sp{
+                    width: 100%;
+                    overflow: hidden;
+                    .col{
+
+                    }
+                }
                 .hidden{
                     display: none;
                 }
-                .visibility{
+                .hidden.visibility{
                     transition: all 0.3s;
                     animation: d-play 3s;
                     @keyframes d-play {
