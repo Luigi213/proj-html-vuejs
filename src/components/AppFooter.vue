@@ -6,7 +6,7 @@ export default {
 }
 </script>
 <template lang="">
-    <footer>
+    <footer class="pb-4">
         <div class="container">
             <div class="row d-flex align-items-center">
                 <div class="col-3">
