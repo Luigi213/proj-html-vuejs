@@ -1,6 +1,23 @@
 <script>
 export default {
-    
+    data(){
+        return{
+            workArray:[
+                {
+                    img:'work1.png',
+                },
+                {
+                    img:'work2.png',
+                },
+                {
+                    img:'work3.png',
+                },
+                {
+                    img:'work4.png',
+                },
+            ]
+        }
+    }
 }
 </script>
 <template lang="">
@@ -14,29 +31,11 @@ export default {
                 </div>
             </div>
             <div class="row gy-4 mt-3">
-                <div class="col-6">
-                    <img src="../assets/images/work1.png" alt="work1">
+                <div class="col-6" v-for="(work, index) in workArray" :key="index">
+                    <img :src="`src/assets/images/${work.img}`" :alt="`work${index}`">
                     <div class="overlay">
                         <a class="d-flex justify-content-center align-items-center text-decoration-none" href="#"><i class="fa-solid fa-play fs-2"></i></a>
                     </div>
-                </div>
-                <div class="col-6">
-                    <img src="../assets/images/work2.png" alt="work2">
-                    <div class="overlay">
-                        <a class="d-flex justify-content-center align-items-center text-decoration-none" href="#"><i class="fa-solid fa-play fs-2"></i></a>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <img src="../assets/images/work3.png" alt="work3">      
-                    <div class="overlay">
-                        <a class="d-flex justify-content-center align-items-center text-decoration-none" href="#"><i class="fa-solid fa-play fs-2"></i></a>
-                    </div>            
-                </div>
-                <div class="col-6">
-                    <img src="../assets/images/work4.png" alt="work4">  
-                    <div class="overlay">
-                        <a class="d-flex justify-content-center align-items-center text-decoration-none" href="#"><i class="fa-solid fa-play fs-2"></i></a>
-                    </div>               
                 </div>
                 <div class="col-12 text-center mt-5">
                     <div class="btn">
