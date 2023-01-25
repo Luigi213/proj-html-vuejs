@@ -1,6 +1,29 @@
 <script>
 export default {
-    
+    data(){
+        return{
+            smartArray:[
+                {
+                    id:1,
+                    img:'smart1.png',
+                    title:'3D modeling',
+                    pagraph:'We constantly ask questions. It helps us shape your story and deliver the results you crave. Yep, we\'ll drill deep to deliver above and beyond your expectations.'
+                },
+                {
+                    id:2,
+                    img:'smart2.png',
+                    title:'Collaboration',
+                    pagraph:'We constantly ask questions. It helps us shape your story and deliver the results you crave. Yep, we\'ll drill deep to deliver above and beyond your expectations.'
+                },
+                {
+                    id:3,
+                    img:'smart3.png',
+                    title:'Creativity',
+                    pagraph:'We constantly ask questions. It helps us shape your story and deliver the results you crave. Yep, we\'ll drill deep to deliver above and beyond your expectations.'
+                },
+            ]
+        }
+    }
 }
 </script>
 <template lang="">
@@ -16,25 +39,11 @@ export default {
                         </div>                                            
                     </div>
                     <div class="row mt-5">
-                        <div class="col-4">
-                            <div class="card-sp-sm1 text-center">
-                                <img src="../assets/images/smart1.png" alt="smart1">
-                                <h3 class="mt-3 fw-semibold">3D modeling</h3>
-                                <p>We constantly ask questions. It helps us shape your story and deliver the results you crave. Yep, we'll drill deep to deliver above and beyond your expectations.</p>                      
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="card-sp-sm2 text-center"> 
-                                <img src="../assets/images/smart2.png" alt="smart2">
-                                <h3 class="mt-3 fw-semibold">Collaboration</h3>         
-                                <p>We constantly ask questions. It helps us shape your story and deliver the results you crave. Yep, we'll drill deep to deliver above and beyond your expectations.</p>                       
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="card-sp-sm3 text-center">              
-                                <img src="../assets/images/smart3.png" alt="smart3">                  
-                                <h3 class="mt-3 fw-semibold">Creativity</h3>
-                                <p>We constantly ask questions. It helps us shape your story and deliver the results you crave. Yep, we'll drill deep to deliver above and beyond your expectations.</p>
+                        <div class="col-4" v-for="(smart, index) in smartArray" ::key="index">
+                            <div :class="`card-sp-sm${smart.id} text-center`">
+                                <img :src="`src/assets/images/${smart.img}`" :alt="`smart${smart.id}`">
+                                <h3 class="mt-3 fw-semibold">{{smart.title}}</h3>
+                                <p>{{smart.pagraph}}</p>                      
                             </div>
                         </div>
                     </div>
