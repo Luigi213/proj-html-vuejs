@@ -2,11 +2,34 @@
 export default {
     props:{
         navbar: Array
+    }, 
+    data(){
+        return{
+            scrolY: 0,
+            fix: '',
+        }
     },
+    created () {
+        window.addEventListener('scroll', this.handleScroll);
+    },
+    destroyed () {
+        window.removeEventListener('scroll', this.handleScroll);
+    },
+    methods: {
+        handleScroll (event) {
+            this.scrolY = window.scrollY;
+            if(this.scrolY > 800){
+                this.fix = 'fixed'
+            }
+            else{
+                this.fix = ''
+            }
+        }       
+    }
 }
 </script>
 <template lang="">
-    <header class="down-scroll">
+    <header :class="fix">
         <div class="container">
             <div class="row d-flex align-items-center">
                 <div class="col-3">
@@ -30,12 +53,21 @@ export default {
 <style lang="scss" scoped>
     @use '../styles/partials/variables' as *;
     @use '../styles/partials/mixins' as *;
+    .fixed{
+        z-index: 99;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        padding: 23px 0;
+        transition: all 0.3s;
+        background-color: rgb(38, 2, 98)
+    }
     header{
         z-index: 2;
         position: absolute;
         width: 100%;
         top: 0;
-        padding: 23px 0 0;
+        padding: 23px 0;
         ul{
             li{     
                 &:last-child{

@@ -8,7 +8,7 @@ export default {
     AppHeader,
     AppMain,
     AppFooter,
-    Loading
+    Loading,
   },
   data(){
     return{
